@@ -1,0 +1,16 @@
+name: Check for newer nginx container
+## Set to run at midnight
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  check-for-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for newer nginx container
+        uses: docker://docker.io/library/nginx:stable-alpine
+        with:
+          entrypoint: sh
+          args: '-c "apk update && apk info -u nginx"'
