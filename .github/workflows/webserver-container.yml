@@ -30,4 +30,5 @@ jobs:
       - name: Test container
         run: |
           curl -I http://localhost/
+          wget http://localhost/
           docker stop my-top10-list
