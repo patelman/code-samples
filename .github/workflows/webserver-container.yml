@@ -24,6 +24,6 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Run Docker
         run: |
-           docker exec -di -p 80:80 patelman/my-top10-list:latest cat
+           docker run -di -p 80:80 patelman/my-top10-list:latest
            curl http://localhost/top10
 
