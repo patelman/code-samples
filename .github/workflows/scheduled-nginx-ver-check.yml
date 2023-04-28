@@ -13,4 +13,13 @@ jobs:
         uses: docker://docker.io/library/nginx:stable-alpine
         with:
           entrypoint: sh
-          args: '-c "apk update && apk info -u nginx"'
+          args: '-c "apk update && apk version nginx"'
+        id: nginx_version_check
+      - name: Print nginx update status
+        run: |
+          if [[ "${{ steps.nginx_version_check.outputs.stdout }}" == *'newer than'* ]]; then
+            echo "A newer version of nginx is available"
+          else
+            echo "nginx is up to date"
+          fi
+
