@@ -14,6 +14,6 @@ jobs:
       - name: Build container
         uses: docker/build-push-action@v2
         with:
-          context: .
+          context: ./github-actions/.
           push: true
           tags: username/my-top10-list:latest
