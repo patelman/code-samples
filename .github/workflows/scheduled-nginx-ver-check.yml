@@ -2,7 +2,7 @@ name: Check for newer nginx container
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 1 * * *"
 
 jobs:
   check-for-updates:
