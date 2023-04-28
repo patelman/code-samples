@@ -19,11 +19,19 @@ jobs:
           context: ./github-actions/.
           push: false
           tags: patelman/my-top10-list:latest
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+#         env:
+#           DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+#           DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Run Docker
-        run: |
-           docker run -di -p 80:80 patelman/my-top10-list:latest
-           curl http://localhost
+        run: docker run -d --name my-top10-list -p 80:80 patelman/my-top10-list:latest
 
+      - name: Wait for container to start
+        uses: jakejarvis/wait-action@v1
+        with:
+          time: '30s'
+          silent: true
+
+      - name: Test container
+        run: |
+          curl -I http://localhost/
+          docker stop my-top10-list
