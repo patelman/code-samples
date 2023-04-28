@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Top 10 Movies</title>
+	<style>
+		/* Add some basic styling to the list */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+			margin: 20px 0;
+		}
+
+		ol {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			padding: 10px;
+			margin-bottom: 5px;
+			background-color: #eee;
+			border-radius: 5px;
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+</head>
+<body>
+	<h1>My Top 10 Movies</h1>
+	<ol>
+		<li>The Godfather</li>
+		<li>The Shawshank Redemption</li>
+		<li>The Dark Knight</li>
+		<li>Pulp Fiction</li>
+		<li>Forrest Gump</li>
+		<li>The Matrix</li>
+		<li>Star Wars: Episode IV - A New Hope</li>
+		<li>The Silence of the Lambs</li>
+		<li>Schindler's List</li>
+		<li>The Lord of the Rings: The Fellowship of the Ring</li>
+	</ol>
+</body>
+</html>
