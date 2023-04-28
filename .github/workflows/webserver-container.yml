@@ -16,4 +16,4 @@ jobs:
         with:
           context: ./github-actions/.
           push: true
-          tags: username/my-top10-list:latest
+          tags: patelman/my-top10-list:latest
