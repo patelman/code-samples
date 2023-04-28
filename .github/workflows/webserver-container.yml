@@ -17,3 +17,6 @@ jobs:
           context: ./github-actions/.
           push: true
           tags: patelman/my-top10-list:latest
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
