@@ -25,5 +25,5 @@ jobs:
       - name: Run Docker
         run: |
            docker run -di -p 80:80 patelman/my-top10-list:latest
-           curl http://localhost/top10
+           curl http://localhost
 
