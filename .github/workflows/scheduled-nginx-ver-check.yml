@@ -2,7 +2,7 @@ name: Check for newer nginx container
 ## Set to run at midnight
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "*/2 * * * *"
 
 jobs:
   check-for-updates:
