@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Top 10 Songs</title>
+	<style>
+		/* Add some basic styling to the list */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			text-align: center;
+			margin: 20px 0;
+		}
+
+		ol {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			padding: 10px;
+			margin-bottom: 5px;
+			background-color: #eee;
+			border-radius: 5px;
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+</head>
+<body>
+	<h1>My Top 10 Songs</h1>
+	<ol>
+		<li>"Stay" by The Kid LAROI & Justin Bieber</li>
+		<li>"Industry Baby" by Lil Nas X & Jack Harlow</li>
+		<li>"Good 4 U" by Olivia Rodrigo</li>
+		<li>"Levitating" by Dua Lipa Featuring DaBaby</li>
+		<li>"Kiss Me More" by Doja Cat Featuring SZA</li>
+		<li>"Montero (Call Me By Your Name)" by Lil Nas X</li>
+		<li>"Way 2 Sexy" by Drake Featuring Future & Young Thug</li>
+		<li>"Bad Habits" by Ed Sheeran</li>
+		<li>"Essence" by Wizkid Featuring Tems</li>
+		<li>"Fancy Like" by Walker Hayes</li>
+	</ol>
+</body>
+</html>
