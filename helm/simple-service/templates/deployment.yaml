@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "simple-service.fullname" . }}
+  labels:
+    apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "simple-service.fullname" . }}
+  labels:
+    {{- include "simple-service.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "simple-service.selectorLabels" . | nindent 8 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 12 }}
+      {{- end }}
+      labels:
+        {{- include "simple-service.selectorLabels" . | nindent 12 }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+          env:
+            - name: TOP_10_LIST
+              value: {{ .Values.top10List }}
+{{- include "simple-service.labels" . | nindent 4 }}
